@@ -1,4 +1,4 @@
-file = open("/home/eejebring/score2.txt","r")
+file = open("/home/eejebring/Downloads/score2.txt","r")
 textLines = file.read().split()
 
 pointDict = dict()
@@ -24,3 +24,17 @@ for lines in textLines:
 
 for person in pointDict:
     print(person + f" {pointDict[person]}")
+
+topScore = 0
+for person in pointDict:
+    if topScore < pointDict[person]:
+        topScore = pointDict[person]
+        winner = person
+    elif topScore == pointDict[person]:
+        winner += f" and {person}"
+
+
+
+print(f"\nAnd the winner is!:\n {winner} with {topScore} points")
+
+#the winner in my simmulation is Maria Johansson and Kristina Larsson with 37 points!
